@@ -11,10 +11,28 @@ const dummyData = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(dummyData);
+  const [expense, setExpense] = useState('');
+  const [amount, setAmount] = useState('');
+
+  const handleExpense = e => {
+    console.log('expense', e.target.value);
+    setExpense(e.target.value);
+  };
+
+  const handleAmount = e => {
+    console.log('amount', e.target.value);
+    setAmount(e.target.value);
+  };
 
   return (
     <div className="app-container">
       <h1>Expense Calculator</h1>
+      <ExpenseForm
+        expense={expense}
+        amount={amount}
+        handleExpense={handleExpense}
+        handleAmount={handleAmount}
+      />
       <ExpenseList expenses={expenses} />
     </div>
   );
