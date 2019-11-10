@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Item from '../Item/Item.jsx';
 
-const ExpenseList = ({ expenses, handleClear }) => (
+const ExpenseList = ({ expenses, handleClear, total }) => (
   <div className="expense-list-container">
     <ul>
       {expenses.map(item => (
@@ -21,6 +21,7 @@ const ExpenseList = ({ expenses, handleClear }) => (
 ExpenseList.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   handleClear: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default ExpenseList;

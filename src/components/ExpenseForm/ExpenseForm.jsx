@@ -18,7 +18,7 @@ const ExpenseForm = ({
         required
       />
       <input
-        type="text"
+        type="number"
         value={amount}
         onChange={handleAmount}
         placeholder="e.g. 200"
@@ -31,7 +31,7 @@ const ExpenseForm = ({
 
 ExpenseForm.propTypes = {
   expense: PropTypes.string.isRequired,
-  amount: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
   handleExpense: PropTypes.func.isRequired,
   handleAmount: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
