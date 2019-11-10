@@ -6,7 +6,7 @@ const Item = ({ itemInfo }) => (
     <li>
       <div>
         <p>{itemInfo.expense}</p>
-        <p>{itemInfo.amount}</p>
+        <p>${itemInfo.amount}</p>
       </div>
       <div>
         <button type="button">EDIT</button>

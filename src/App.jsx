@@ -15,13 +15,24 @@ const App = () => {
   const [amount, setAmount] = useState('');
 
   const handleExpense = e => {
-    console.log('expense', e.target.value);
     setExpense(e.target.value);
   };
 
   const handleAmount = e => {
-    console.log('amount', e.target.value);
     setAmount(e.target.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const newExpense = { id: expenses.length, expense, amount };
+    setExpenses([...expenses, newExpense]);
+    setExpense('');
+    setAmount('');
+  };
+
+  const handleClear = () => {
+    setExpenses([]);
   };
 
   return (
@@ -32,8 +43,9 @@ const App = () => {
         amount={amount}
         handleExpense={handleExpense}
         handleAmount={handleAmount}
+        handleSubmit={handleSubmit}
       />
-      <ExpenseList expenses={expenses} />
+      <ExpenseList expenses={expenses} handleClear={handleClear} />
     </div>
   );
 };

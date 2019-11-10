@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ExpenseForm = ({ expense, amount, handleExpense, handleAmount }) => (
-  <form>
+const ExpenseForm = ({
+  expense,
+  amount,
+  handleExpense,
+  handleAmount,
+  handleSubmit,
+}) => (
+  <form onSubmit={e => handleSubmit(e)}>
     <div>
       <input
         type="text"
@@ -25,9 +31,10 @@ const ExpenseForm = ({ expense, amount, handleExpense, handleAmount }) => (
 
 ExpenseForm.propTypes = {
   expense: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.string.isRequired,
   handleExpense: PropTypes.func.isRequired,
   handleAmount: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default ExpenseForm;
