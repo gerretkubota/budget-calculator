@@ -15,14 +15,12 @@ const ExpenseForm = ({
         value={expense}
         onChange={handleExpense}
         placeholder="e.g. Rent"
-        required
       />
       <input
         type="number"
         value={amount}
         onChange={handleAmount}
         placeholder="e.g. 200"
-        required
       />
     </div>
     <button type="submit">SUBMIT</button>
